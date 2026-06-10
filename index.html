@@ -140,8 +140,9 @@ button{
     width:100%;
     height:100%;
     object-fit:cover;
-
-    transition:opacity 0.8s ease;
+    opacity:1;
+    transition: opacity 0.8s ease-in-out;
+    will-change: opacity;
 }
 
 button{
@@ -211,23 +212,35 @@ button:active{
 ];
 
 const foto = document.getElementById("foto");
+let imagemAtual = "media/image1.jpeg";
 
-setInterval(() => {
-
+function trocarImagem() {
     foto.style.opacity = "0";
 
     setTimeout(() => {
+        let novaImagem;
 
-        const aleatoria =
-            imagens[Math.floor(Math.random() * imagens.length)];
+        do {
+            novaImagem = imagens[Math.floor(Math.random() * imagens.length)];
+        } while (novaImagem === imagemAtual);
 
-        foto.src = aleatoria;
-        foto.style.opacity = "1";
+        const imgPreload = new Image();
 
-    }, 800);
+        imgPreload.onload = () => {
+            foto.src = novaImagem;
+            imagemAtual = novaImagem;
 
-}, 4000);
+            requestAnimationFrame(() => {
+                foto.style.opacity = "1";
+            });
+        };
 
+        imgPreload.src = novaImagem;
+
+    }, 900);
+}
+
+setInterval(trocarImagem, 4000);
 const frases = [
     "Eu te amo",          // Português
     "I love you",         // Inglês
@@ -266,6 +279,7 @@ const frases = [
     "Rwy'n dy garu di",   // Galês
     "Mon renmen ou"       // Crioulo haitiano
 ];
+
 for(let i=0;i<80;i++){
 
     const span = document.createElement("span");
