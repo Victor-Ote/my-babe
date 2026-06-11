@@ -46,4 +46,6 @@ Você pode alterar:
 
 ## Autor
 
+Victor-Ote
+
 Projeto desenvolvido com carinho para criar uma experiência visual simples, leve e especial.
