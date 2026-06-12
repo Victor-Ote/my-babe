@@ -137,8 +137,8 @@ const memorias = [  "Do seu abraço ❤️",
 
     "De te fazer rir ❤️",
     "MInha Gansa ❤️",
-    "De te abraçar sem motivo ❤️",
-    "Do seu olhar quando está feliz ❤️",
+    "Meu palpipe ❤️",
+    "Meu paltife ❤️",
     "Do nosso filho bichento ❤️",
     "De poder chamar você de minha ❤️",
     "Da sua existência na minha vida ❤️"
